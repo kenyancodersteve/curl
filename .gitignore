@@ -1,0 +1,9 @@
+node_modules/
+dist/
+*.log
+
+# Desktop release installers are published separately with Git LFS or GitHub Releases.
+Curl-Studio-Linux-amd64.deb
+Curl-Studio-Mac-Apple-Silicon.pkg
+Curl-Studio-Mac-Intel.pkg
+Curl-Studio-Setup-Windows-x64.exe

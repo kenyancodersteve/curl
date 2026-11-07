@@ -1,0 +1,65 @@
+{
+  "name": "curl-studio",
+  "version": "1.0.1",
+  "description": "Friendly local API and curl workbench",
+  "author": "Stephen Ndungu",
+  "main": "desktop.cjs",
+  "scripts": {
+    "start": "node server.cjs",
+    "desktop": "electron .",
+    "test": "node --test test.cjs",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^39.0.0",
+    "electron-builder": "^26.0.0"
+  },
+  "build": {
+    "appId": "com.stephen.curlstudio",
+    "productName": "Curl Studio",
+    "files": [
+      "server.cjs",
+      "desktop.cjs",
+      "public/**/*",
+      "package.json",
+      "shell.cjs"
+    ],
+    "asar": true,
+    "linux": {
+      "target": [
+        "deb"
+      ],
+      "category": "Development",
+      "maintainer": "Stephen Ndungu"
+    },
+    "win": {
+      "target": "portable",
+      "signAndEditExecutable": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "mac": {
+      "target": "zip",
+      "category": "public.app-category.developer-tools",
+      "identity": null
+    },
+    "deb": {
+      "depends": [
+        "libgtk-3-0",
+        "libnotify4",
+        "libnss3",
+        "libxss1",
+        "libxtst6",
+        "xdg-utils",
+        "libatspi2.0-0",
+        "libuuid1",
+        "libsecret-1-0",
+        "curl"
+      ]
+    }
+  },
+  "homepage": "http://127.0.0.1:3210",
+  "license": "MIT"
+}
